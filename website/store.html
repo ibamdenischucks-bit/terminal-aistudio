@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal-Aistudio | App Version Releases</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#312e81',
+                            950: '#1e1b4b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px -10px rgba(99, 102, 241, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen selection:bg-indigo-500 selection:text-white">
+
+    <!-- Top Header -->
+    <header class="sticky top-0 z-50 glass-panel border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Branding -->
+            <div class="flex items-center space-x-3">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-indigo-600 via-violet-600 to-pink-500 flex items-center justify-center shadow-lg shadow-indigo-500/30">
+                    <i class="fa-solid fa-cube text-white text-lg"></i>
+                </div>
+                <div>
+                    <div class="flex items-center space-x-2">
+                        <span class="font-extrabold text-xl tracking-tight bg-gradient-to-r from-white via-indigo-200 to-indigo-400 bg-clip-text text-transparent">Omini Store</span>
+                        <span class="text-xs px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-medium border border-indigo-500/30">v1...</span>
+                    </div>
+                    <p class="text-xs text-slate-400 flex items-center space-x-1.5 mt-0.5">
+                        <span>Ominisignal App</span>
+                        <span class="w-1 h-1 rounded-full bg-slate-600"></span>
+                        <span class="text-indigo-400 font-medium">Plug AI Ecosystem</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Quick Action & Status -->
+            <div class="flex items-center space-x-4">
+                <div class="hidden sm:flex items-center space-x-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-medium">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span>All Systems Operational</span>
+                </div>
+                <button onclick="openRequestModal()" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-sm transition shadow-lg shadow-indigo-600/20 flex items-center space-x-2">
+                    <i class="fa-solid fa-code-branch"></i>
+                    <span class="hidden md:inline">Request Build</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-12 pb-10 overflow-hidden">
+        <!-- Glowing background blobs -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-indigo-600/20 to-pink-600/15 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-300 text-xs mb-6 shadow-sm">
+                    <span class="text-indigo-400 font-semibold">⚡ Powered by Plug AI Core</span>
+                    <span class="text-slate-600">|</span>
+                    <span>Next-Gen Signal Intelligence</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6">
+                    Release Library & <br class="hidden sm:inline">
+                    <span class="bg-gradient-to-r from-indigo-400 via-violet-300 to-pink-400 bg-clip-text text-transparent">Changelog Hub</span>
+                </h1>
+                <p class="text-slate-400 text-base sm:text-lg mb-8 max-w-2xl mx-auto">
+                    Access historical builds, stable production releases, and bleeding-edge beta packages for Ominisignal across all supported platforms.
+                </p>
+
+                <!-- Search & Filters Bar -->
+                <div class="glass-panel p-3 rounded-2xl shadow-xl flex flex-col md:flex-row items-center gap-3">
+                    <div class="relative w-full md:flex-1">
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                        <input type="text" id="searchInput" oninput="filterReleases()" placeholder="Search version, changelog, or build hash..." class="w-full pl-11 pr-4 py-3 bg-slate-900/80 border border-slate-700/60 rounded-xl text-slate-200 placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-sm">
+                    </div>
+                    <div class="flex items-center w-full md:w-auto gap-2">
+                        <select id="sortSelect" onchange="filterReleases()" class="w-full md:w-auto px-4 py-3 bg-slate-900/80 border border-slate-700/60 rounded-xl text-slate-200 text-sm focus:outline-none focus:border-indigo-500">
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Filters -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <div class="flex items-center justify-start sm:justify-center overflow-x-auto pb-2 gap-2 no-scrollbar">
+            <button onclick="setPlatform('all')" id="btn-all" class="platform-tab px-5 py-2.5 rounded-xl text-sm font-semibold transition flex items-center space-x-2 whitespace-nowrap bg-indigo-600 text-white shadow-lg shadow-indigo-600/25">
+                <i class="fa-solid fa-layer-group"></i>
+                <span>All Platforms</span>
+                <span class="ml-1 px-1.5 py-0.2 bg-white/20 rounded-full text-xs" id="count-all">6</span>
+            </button>
+            <button onclick="setPlatform('desktop')" id="btn-desktop" class="platform-tab px-5 py-2.5 rounded-xl text-sm font-semibold transition flex items-center space-x-2 whitespace-nowrap bg-slate-900 text-slate-400 hover:bg-slate-800 hover:text-slate-200 border border-slate-800">
+                <i class="fa-solid fa-desktop text-indigo-400"></i>
+                <span>Desktop (Win/Mac)</span>
+                <span class="ml-1 px-1.5 py-0.2 bg-slate-800 rounded-full text-xs" id="count-desktop">1</span>
+            </button>
+            <button onclick="setPlatform('web')" id="btn-web" class="platform-tab px-5 py-2.5 rounded-xl text-sm font-semibold transition flex items-center space-x-2 whitespace-nowrap bg-slate-900 text-slate-400 hover:bg-slate-800 hover:text-slate-200 border border-slate-800">
+                <i class="fa-solid fa-globe text-cyan-400"></i>
+                <span>Web PWA</span>
+                <span class="ml-1 px-1.5 py-0.2 bg-slate-800 rounded-full text-xs" id="count-web">1</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Releases Grid / List -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div id="releasesContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Cards populated dynamically via script -->
+        </div>
+
+        <!-- Empty State (Hidden by default) -->
+        <div id="emptyState" class="hidden text-center py-20">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-500 text-2xl">
+                <i class="fa-solid fa-box-open"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-300 mb-1">No matching releases found</h3>
+            <p class="text-sm text-slate-500">Try adjusting your search terms or filter selection.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-900 bg-slate-950/80 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 rounded-lg bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
+                    <img src="static/images/bug.png">
+                </div>
+                <div>
+                    <p class="text-sm font-semibold text-slate-300">Omini Store &bull; Terminal-Aistudio</p>
+                    <p class="text-xs text-slate-500">Copyright &copy; 2026 Plug AI. All rights reserved.</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-6 text-xs text-slate-400">
+                <a href="#terms" onclick="showNotice('Plug AI Terms & Privacy Policy applied.')" class="hover:text-indigo-400 transition">Privacy & Terms</a>
+                <a href="#security" onclick="showNotice('All binaries are cryptographically signed by Plug AI KeyStore.')" class="hover:text-indigo-400 transition">Security Verification</a>
+                <a href="#api" onclick="showNotice('Ominisignal API v2 endpoint active.')" class="hover:text-indigo-400 transition">API Status</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="glass-panel px-5 py-3 rounded-2xl shadow-2xl border border-indigo-500/30 flex items-center space-x-3">
+            <div id="toastIcon" class="w-7 h-7 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xs">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <span id="toastMessage" class="text-sm font-medium text-slate-200">Action completed successfully</span>
+        </div>
+    </div>
+
+    <!-- Request Modal -->
+    <div id="requestModal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="glass-panel w-full max-w-lg p-6 rounded-3xl border border-slate-800 shadow-2xl mx-4 transform scale-95 transition-transform duration-300" id="modalContent">
+            <div class="flex items-center justify-between mb-6">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center">
+                        <i class="fa-solid fa-code-pull-request"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-white">Request Custom Build</h3>
+                        <p class="text-xs text-slate-400">Submit a staging build request via Plug AI pipeline</p>
+                    </div>
+                </div>
+                <button onclick="closeRequestModal()" class="w-8 h-8 rounded-full bg-slate-900 text-slate-400 hover:text-white flex items-center justify-center">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <form onsubmit="handleBuildRequest(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Target Platform</label>
+                    <select class="w-full px-4 py-2.5 bg-slate-900 border border-slate-700/80 rounded-xl text-slate-200 text-sm focus:outline-none focus:border-indigo-500">
+                        <option>Android (APK / AAB)</option>
+                        <option>iOS (TestFlight / IPA)</option>
+                        <option>Desktop (Windows x64)</option>
+                        <option>Desktop (macOS Universal)</option>
+                        <option>Web PWA Bundle</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Branch / Tag</label>
+                    <input type="text" placeholder="e.g., feature/ai-signal-v2 or release/v2.4.0" required class="w-full px-4 py-2.5 bg-slate-900 border border-slate-700/80 rounded-xl text-slate-200 text-sm focus:outline-none focus:border-indigo-500 placeholder-slate-600">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Notes or Intent</label>
+                    <textarea rows="3" placeholder="Describe the testing requirements..." class="w-full px-4 py-2.5 bg-slate-900 border border-slate-700/80 rounded-xl text-slate-200 text-sm focus:outline-none focus:border-indigo-500 placeholder-slate-600"></textarea>
+                </div>
+                <div class="flex justify-end space-x-3 pt-2">
+                    <button type="button" onclick="closeRequestModal()" class="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 text-sm font-medium transition">Cancel</button>
+                    <button type="submit" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold transition shadow-lg shadow-indigo-600/30">Submit Request</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Release Database for Ominisignal App (Plug AI)
+        const releasesData = [
+            {
+                id: 'rel-1',
+                version: 'v1.1.0-stable',
+                name: 'Ominisignal Enterprise Core',
+                platform: 'desktop',
+                platformName: 'Desktop (Win/Mac)',
+                platformIcon: 'fa-solid fa-desktop',
+                badge: 'Latest',
+                badgeType: 'indigo',
+                date: 'March 24, 2026',
+                size: '84.2 MB',
+                hash: 'sha256:8f9a...3c2e',
+                downloadsCount: 1420,
+                changelog: [
+                    'Integrated Plug AI v4 Neural Engine for sub-millisecond signal filtering.',
+                    'Added multi-workspace telemetry dashboards with custom alert hooks.',
+                    'Optimized memory footprint by 34% during high concurrency streams.'
+                ],
+                downloadUrl: '#'
+            },
+            {
+               id: 'rel-2',
+                version: 'v1.2.0-stable',
+                name: 'Ominisignal Enterprise Core',
+                platform: 'desktop',
+                platformName: 'Desktop (Win/Mac)',
+                platformIcon: 'fa-solid fa-desktop',
+                badge: 'Latest',
+                badgeType: 'indigo',
+                date: 'March 24, 2026',
+                size: '84.2 MB',
+                hash: 'sha256:8f9a...3c2e',
+                downloadsCount: 1420,
+                changelog: [
+                    'Integrated Plug AI v4 Neural Engine for sub-millisecond signal filtering.',
+                    'Added multi-workspace telemetry dashboards with custom alert hooks.',
+                    'Optimized memory footprint by 34% during high concurrency streams.'
+                ],
+                downloadUrl: '#'
+            },
+            {
+                id: 'rel-3',
+                version: 'v1.3.0-stable',
+                name: 'Ominisignal Enterprise Core',
+                platform: 'desktop',
+                platformName: 'Desktop (Win/Mac)',
+                platformIcon: 'fa-solid fa-desktop',
+                badge: 'Latest',
+                badgeType: 'indigo',
+                date: 'March 24, 2026',
+                size: '84.2 MB',
+                hash: 'sha256:8f9a...3c2e',
+                downloadsCount: 1420,
+                changelog: [
+                    'Integrated Plug AI v4 Neural Engine for sub-millisecond signal filtering.',
+                    'Added multi-workspace telemetry dashboards with custom alert hooks.',
+                    'Optimized memory footprint by 34% during high concurrency streams.'
+                ],
+                downloadUrl: '#'
+            },
+            {
+                id: 'rel-4',
+                version: 'v1.4.0-stable',
+                name: 'Ominisignal Enterprise Core',
+                platform: 'desktop',
+                platformName: 'Desktop (Win/Mac)',
+                platformIcon: 'fa-solid fa-desktop',
+                badge: 'Latest',
+                badgeType: 'indigo',
+                date: 'March 24, 2026',
+                size: '84.2 MB',
+                hash: 'sha256:8f9a...3c2e',
+                downloadsCount: 1420,
+                changelog: [
+                    'Integrated Plug AI v4 Neural Engine for sub-millisecond signal filtering.',
+                    'Added multi-workspace telemetry dashboards with custom alert hooks.',
+                    'Optimized memory footprint by 34% during high concurrency streams.'
+                ],
+                downloadUrl: '#'
+            },
+            {
+                id: 'rel-5',
+                 version: 'v1.5.0-stable',
+                name: 'Ominisignal Enterprise Core',
+                platform: 'desktop',
+                platformName: 'Desktop (Win/Mac)',
+                platformIcon: 'fa-solid fa-desktop',
+                badge: 'Latest',
+                badgeType: 'indigo',
+                date: 'March 24, 2026',
+                size: '84.2 MB',
+                hash: 'sha256:8f9a...3c2e',
+                downloadsCount: 1420,
+                changelog: [
+                    'Integrated Plug AI v4 Neural Engine for sub-millisecond signal filtering.',
+                    'Added multi-workspace telemetry dashboards with custom alert hooks.',
+                    'Optimized memory footprint by 34% during high concurrency streams.'
+                ],
+                downloadUrl: '#'
+            },
+            {
+                id: 'rel-6',
+                 version: 'v1.6.0-stable',
+                name: 'Ominisignal Enterprise Core',
+                platform: 'desktop',
+                platformName: 'Desktop (Win/Mac)',
+                platformIcon: 'fa-solid fa-desktop',
+                badge: 'Latest',
+                badgeType: 'indigo',
+                date: 'March 24, 2026',
+                size: '84.2 MB',
+                hash: 'sha256:8f9a...3c2e',
+                downloadsCount: 1420,
+                changelog: [
+                    'Integrated Plug AI v4 Neural Engine for sub-millisecond signal filtering.',
+                    'Added multi-workspace telemetry dashboards with custom alert hooks.',
+                    'Optimized memory footprint by 34% during high concurrency streams.'
+                ],
+                downloadUrl: '#'
+            }
+        ];
+
+        let currentPlatform = 'all';
+
+        // Initialize App
+        document.addEventListener('DOMContentLoaded', () => {
+            renderReleases(releasesData);
+            updateCounts();
+        });
+
+        // Filter platform selection
+        function setPlatform(platform) {
+            currentPlatform = platform;
+            
+            // Update tab styles
+            document.querySelectorAll('.platform-tab').forEach(btn => {
+                btn.className = "platform-tab px-5 py-2.5 rounded-xl text-sm font-semibold transition flex items-center space-x-2 whitespace-nowrap bg-slate-900 text-slate-400 hover:bg-slate-800 hover:text-slate-200 border border-slate-800";
+            });
+            
+            const activeBtn = document.getElementById(`btn-${platform}`);
+            if (activeBtn) {
+                activeBtn.className = "platform-tab px-5 py-2.5 rounded-xl text-sm font-semibold transition flex items-center space-x-2 whitespace-nowrap bg-indigo-600 text-white shadow-lg shadow-indigo-600/25 border border-transparent";
+            }
+
+            filterReleases();
+        }
+
+        // Filter and Search logic
+        function filterReleases() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const sortOrder = document.getElementById('sortSelect').value;
+
+            let filtered = releasesData.filter(item => {
+                const matchesPlatform = (currentPlatform === 'all' || item.platform === currentPlatform);
+                const matchesQuery = item.version.toLowerCase().includes(query) ||
+                                     item.name.toLowerCase().includes(query) ||
+                                     item.changelog.some(c => c.toLowerCase().includes(query));
+                return matchesPlatform && matchesQuery;
+            });
+
+            // Sort logic
+            filtered.sort((a, b) => {
+                const dateA = new Date(a.date);
+                const dateB = new Date(b.date);
+                return sortOrder === 'newest' ? dateB - dateA : dateA - dateB;
+            });
+
+            renderReleases(filtered);
+        }
+
+        // Render cards
+        function renderReleases(items) {
+            const container = document.getElementById('releasesContainer');
+            const emptyState = document.getElementById('emptyState');
+
+            if (items.length === 0) {
+                container.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+            
+            let html = '';
+            items.forEach(item => {
+                let badgeClass = 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20';
+                if (item.badgeType === 'emerald') badgeClass = 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20';
+                if (item.badgeType === 'amber') badgeClass = 'bg-amber-500/10 text-amber-400 border-amber-500/20';
+                if (item.badgeType === 'slate') badgeClass = 'bg-slate-800 text-slate-400 border-slate-700';
+
+                html += `
+                    <div class="glass-card rounded-3xl p-6 flex flex-col justify-between relative overflow-hidden group">
+                        <!-- Top Accent Glow -->
+                        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 via-violet-500 to-pink-500 opacity-60 group-hover:opacity-100 transition"></div>
+
+                        <div>
+                            <!-- Header Row -->
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-lg text-indigo-400">
+                                        <i class="${item.platformIcon}"></i>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs text-slate-400 font-medium">${item.platformName}</span>
+                                        <h4 class="font-bold text-white text-base">${item.name}</h4>
+                                    </div>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-full text-xs font-semibold border ${badgeClass}">
+                                    ${item.badge}
+                                </span>
+                            </div>
+
+                            <!-- Version & Meta -->
+                            <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-800/60">
+                                <div class="flex items-center space-x-2">
+                                    <code class="text-xs font-mono bg-slate-900 text-indigo-300 px-2.5 py-1 rounded-lg border border-slate-800">${item.version}</code>
+                                    <span class="text-xs text-slate-500"><i class="fa-regular fa-calendar mr-1"></i>${item.date}</span>
+                                </div>
+                            </div>
+
+                            <!-- Changelog Notes -->
+                            <div class="mb-6">
+                                <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Changelog Highlights</p>
+                                <ul class="space-y-1.5 text-xs text-slate-300">
+                                    ${item.changelog.map(note => `<li class="flex items-start space-x-2"><span class="text-indigo-400 mt-0.5">•</span><span class="leading-relaxed">${note}</span></li>`).join('')}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Footer Details & Download Action -->
+                        <div>
+                            <div class="flex items-center justify-between text-xs text-slate-500 mb-4 pt-3 border-t border-slate-800/40">
+                                <span>Size: <strong class="text-slate-400">${item.size}</strong></span>
+                                <span>Downloads: <strong class="text-slate-400">${item.downloadsCount.toLocaleString()}</strong></span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <button onclick="triggerDownload('${item.version}', '${item.name}')" class="flex-1 py-2.5 px-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs transition flex items-center justify-center space-x-2 shadow-md shadow-indigo-600/20">
+                                    <i class="fa-solid fa-download"></i>
+                                    <span>Download Binary</span>
+                                </button>
+                                <button onclick="copyHash('${item.hash}')" title="Copy SHA-256 Hash" class="p-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-slate-200 border border-slate-800 transition">
+                                    <i class="fa-solid fa-fingerprint text-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        // Update count badges
+        function updateCounts() {
+            document.getElementById('count-all').innerText = releasesData.length;
+            document.getElementById('count-android').innerText = releasesData.filter(i => i.platform === 'android').length;
+            document.getElementById('count-ios').innerText = releasesData.filter(i => i.platform === 'ios').length;
+            document.getElementById('count-desktop').innerText = releasesData.filter(i => i.platform === 'desktop').length;
+            document.getElementById('count-web').innerText = releasesData.filter(i => i.platform === 'web').length;
+        }
+
+        // Toast notification helper
+        function showToast(message, iconClass = 'fa-solid fa-check') {
+            const toast = document.getElementById('toast');
+            const msg = document.getElementById('toastMessage');
+            const icon = document.getElementById('toastIcon');
+
+            msg.innerText = message;
+            icon.innerHTML = `<i class="${iconClass}"></i>`;
+
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 3000);
+        }
+
+        function showNotice(text) {
+            showToast(text, 'fa-solid fa-info');
+        }
+
+        function triggerDownload(version, name) {
+            showToast(`Initiating secure download for ${name} (${version})...`, 'fa-solid fa-cloud-arrow-down');
+        }
+
+        function copyHash(hash) {
+            const textArea = document.createElement("textarea");
+            textArea.value = hash;
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                showToast(`Copied build signature hash to clipboard!`, 'fa-solid fa-shield-check');
+            } catch (err) {
+                showToast(`Failed to copy hash.`, 'fa-solid fa-triangle-exclamation');
+            }
+            document.body.removeChild(textArea);
+        }
+
+        // Modal Controls
+        function openRequestModal() {
+            const modal = document.getElementById('requestModal');
+            const content = document.getElementById('modalContent');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            content.classList.remove('scale-95');
+            content.classList.add('scale-100');
+        }
+
+        function closeRequestModal() {
+            const modal = document.getElementById('requestModal');
+            const content = document.getElementById('modalContent');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            content.classList.remove('scale-100');
+            content.classList.add('scale-95');
+        }
+
+        function handleBuildRequest(e) {
+            e.preventDefault();
+            closeRequestModal();
+            showToast('Build request successfully queued in Plug AI CI pipeline!', 'fa-solid fa-circle-check');
+        }
+    </script>
+</body>
+</html>

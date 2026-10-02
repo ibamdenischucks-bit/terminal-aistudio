@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - Terminal-Aistudio Desktop Suite</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- FontAwesome for Windows/Linux & UI icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glow-effect {
+            box-shadow: 0 0 50px -10px rgba(99, 102, 241, 0.3);
+        }
+        .glass-panel {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- Background Ambient Glows -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-tr from-indigo-950/40 via-purple-950/30 to-blue-950/20 blur-[120px] pointer-events-none -z-10"></div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 glass-panel border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Website Logo Area -->
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-500/30 group-hover:scale-105 transition-transform duration-300">
+                     <img src="static/images/bug.png">
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-white via-slate-200 to-indigo-300 bg-clip-text text-transparent">terminal aistudio</span>
+                    <span class="text-[10px] text-indigo-400 font-medium tracking-widest uppercase">Desktop Suite</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="features.html" class="text-indigo-400 font-semibold">Features</a>
+                <a href="index.html#downloads" class="hover:text-indigo-400 transition-colors">Downloads</a>
+                <a href="systemspec.html" class="hover:text-indigo-400 transition-colors">System Specs</a>
+                <a href="fags.html" class="hover:text-indigo-400 transition-colors">FAQ</a>
+            </nav>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-4">
+                <a href="index.html#downloads" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm shadow-lg shadow-indigo-600/30 transition-all duration-300 hover:shadow-indigo-600/50 hover:-translate-y-0.5">
+                    <i class="fa-solid fa-download mr-2 text-xs"></i> Get App
+                </a>
+                <button id="menu-btn" class="md:hidden p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white focus:outline-none">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden glass-panel border-t border-slate-800 px-4 pt-4 pb-6 space-y-3">
+            <a href="features.html" class="block py-2 text-indigo-400 font-semibold">Features</a>
+            <a href="index.html#downloads" class="block py-2 text-slate-300 hover:text-indigo-400 font-medium">Downloads</a>
+            <a href="systemspec.html" class="block py-2 text-slate-300 hover:text-indigo-400 font-medium">System Specs</a>
+            <a href="fags.html" class="block py-2 text-slate-300 hover:text-indigo-400 font-medium">FAQ</a>
+            <div class="pt-2">
+                <a href="index.html#downloads" class="w-full flex items-center justify-center py-3 rounded-xl bg-indigo-600 text-white font-semibold text-sm shadow-lg shadow-indigo-600/30">
+                    <i class="fa-solid fa-download mr-2"></i> Download Terminal-Aistudio
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Showcase Header -->
+    <section class="py-20 md:py-28 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold mb-6">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> Deep Dive Into Capabilities
+                </div>
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4 tracking-tight">Advanced Desktop Features</h1>
+                <p class="text-slate-400 text-base sm:text-lg">Explore the comprehensive toolkit built directly into OmniSignal for absolute control over insights.</p>
+            </div>
+
+            <!-- Feature Showcase Blocks with Image Placeholders -->
+            <div class="space-y-24">
+                
+                <!-- Feature Block 1 -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-xl mb-6 border border-indigo-500/30">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Real-Time Analysis Multiplexing</h2>
+                        <p class="text-slate-400 text-base leading-relaxed mb-6">
+                        OmniSignal handles high-frequency multiplexing, stability, and Analysis routing seamlessly across multi-core processors.
+                        </p>
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-indigo-400"></i> Zero-loss channel aggregation</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-indigo-400"></i> Dynamic bandwidth allocation</li>
+                        </ul>
+                    </div>
+                    <!-- Image Placeholder Area -->
+                    <div class="glass-panel p-3 rounded-2xl border border-slate-800 glow-effect">
+                        <div class="bg-slate-900 rounded-xl overflow-hidden aspect-video flex flex-col items-center justify-center text-slate-500 border border-slate-800 relative group">
+                            <!-- TODO: Replace src with your screenshot/image -->
+                            <i class="fa-regular fa-image text-4xl mb-3 text-slate-600 group-hover:text-indigo-400 transition-colors"></i>
+                           <img src="static/images/analyse.png"> 
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature Block 2 (Reversed layout) -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <!-- Image Placeholder Area -->
+                    <div class="order-2 lg:order-1 glass-panel p-3 rounded-2xl border border-slate-800 glow-effect">
+                        <div class="bg-slate-900 rounded-xl overflow-hidden aspect-video flex flex-col items-center justify-center text-slate-500 border border-slate-800 relative group">
+                            <!-- TODO: Replace src with your screenshot/image -->
+                            <i class="fa-regular fa-image text-4xl mb-3 text-slate-600 group-hover:text-purple-400 transition-colors"></i>
+                           <img src="static/images/graph.png">
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <div class="w-12 h-12 rounded-xl bg-purple-600/20 text-purple-400 flex items-center justify-center text-xl mb-6 border border-purple-500/30">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Advanced AI & STATISTICS</h2>
+                        <p class="text-slate-400 text-base leading-relaxed mb-6">
+                             realtime built-in graphics statistical suite, performance graphs, packet inspection tools, and log export options.
+                        </p>
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-purple-400"></i> Live packet inspection inspector</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-purple-400"></i> CSV and JSON telemetry export</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Feature Block 3 -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-cyan-600/20 text-cyan-400 flex items-center justify-center text-xl mb-6 border border-cyan-500/30">
+                            <i class="fa-solid fa-sliders"></i>
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Project Monitoring & Feedback</h2>
+                        <p class="text-slate-400 text-base leading-relaxed mb-6">
+                            users can monitor their code progress, automation workflows, and analyse directly within the desktop application.
+                        </p>
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-400"></i> Built-in JavaScript execution engine</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-400"></i> Webhook trigger integration</li>
+                        </ul>
+                    </div>
+                    <!-- Image Placeholder Area -->
+                    <div class="glass-panel p-3 rounded-2xl border border-slate-800 glow-effect">
+                        <div class="bg-slate-900 rounded-xl overflow-hidden aspect-video flex flex-col items-center justify-center text-slate-500 border border-slate-800 relative group">
+                            <!-- TODO: Replace src with your screenshot/image -->
+                           <img src="static/images/project.png">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-900 bg-slate-950 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-slate-500 text-sm">
+            <div class="flex items-center gap-3">
+                <div class="w-7 h-7 rounded-lg bg-indigo-600 flex items-center justify-center text-white text-xs">
+                     <img src="static/images/bug.png">
+                </div>
+                <span class="font-bold text-slate-300">Plugai</span>
+                <span class="text-xs">© 2022 All rights reserved.</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="#" class="hover:text-indigo-400 transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-indigo-400 transition-colors">Terms of Service</a>
+                <a href="features.html" class="text-indigo-400 transition-colors">Features</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

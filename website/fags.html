@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions - Terminal-Aistudio Desktop Suite</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- FontAwesome for Windows/Linux & UI icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glow-effect {
+            box-shadow: 0 0 50px -10px rgba(99, 102, 241, 0.3);
+        }
+        .glass-panel {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- Background Ambient Glows -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-tr from-indigo-950/40 via-purple-950/30 to-blue-950/20 blur-[120px] pointer-events-none -z-10"></div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 glass-panel border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Website Logo Area -->
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-500/30 group-hover:scale-105 transition-transform duration-300">
+                   <img src="static/images/bug.png">
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-white via-slate-200 to-indigo-300 bg-clip-text text-transparent">terminal aistudio</span>
+                    <span class="text-[10px] text-indigo-400 font-medium tracking-widest uppercase">Desktop Suite</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="features.html" class="hover:text-indigo-400 transition-colors">Features</a>
+                <a href="index.html#downloads" class="hover:text-indigo-400 transition-colors">Downloads</a>
+                <a href="systemspec.html" class="hover:text-indigo-400 transition-colors">System Specs</a>
+                <a href="fags.html" class="text-indigo-400 font-semibold">FAQ</a>
+            </nav>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-4">
+                <a href="index.html#downloads" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm shadow-lg shadow-indigo-600/30 transition-all duration-300 hover:shadow-indigo-600/50 hover:-translate-y-0.5">
+                    <i class="fa-solid fa-download mr-2 text-xs"></i> Get App
+                </a>
+                <button id="menu-btn" class="md:hidden p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white focus:outline-none">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden glass-panel border-t border-slate-800 px-4 pt-4 pb-6 space-y-3">
+            <a href="index.html#features" class="block py-2 text-slate-300 hover:text-indigo-400 font-medium">Features</a>
+            <a href="index.html#downloads" class="block py-2 text-slate-300 hover:text-indigo-400 font-medium">Downloads</a>
+            <a href="systemSpecs.html" class="block py-2 text-slate-300 hover:text-indigo-400 font-medium">System Specs</a>
+            <a href="faqs.html" class="block py-2 text-indigo-400 font-semibold">FAQ</a>
+            <div class="pt-2">
+                <a href="index.html#downloads" class="w-full flex items-center justify-center py-3 rounded-xl bg-indigo-600 text-white font-semibold text-sm shadow-lg shadow-indigo-600/30">
+                    <i class="fa-solid fa-download mr-2"></i> Download Terminal-Aistudio
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- FAQ Section -->
+    <section class="py-20 md:py-28 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold mb-6">
+                    <i class="fa-solid fa-circle-question"></i> Got Questions? We've Got Answers.
+                </div>
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4 tracking-tight">Frequently Asked Questions</h1>
+                <p class="text-slate-400 text-base sm:text-lg">Everything you need to know about downloading, installing, and running OmniSignal.</p>
+            </div>
+
+            <!-- FAQ Accordion List -->
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="glass-panel rounded-2xl border border-slate-800 overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between text-white font-semibold hover:text-indigo-400 transition-colors focus:outline-none">
+                        <span>Is OmniSignal completely free to download and use?</span>
+                        <i class="fa-solid fa-chevron-down text-sm text-slate-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-slate-400 text-sm leading-relaxed border-t border-slate-800/60 pt-4">
+                        Yes! The core OmniSignal desktop client for Windows and Linux is completely free for individual creators, developers, and power users. We also offer advanced enterprise server extensions for corporate clusters.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="glass-panel rounded-2xl border border-slate-800 overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between text-white font-semibold hover:text-indigo-400 transition-colors focus:outline-none">
+                        <span>Which Linux formats are supported?</span>
+                        <i class="fa-solid fa-chevron-down text-sm text-slate-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-slate-400 text-sm leading-relaxed border-t border-slate-800/60 pt-4">
+                        We provide both universal **AppImage** formats (runs on almost any modern Linux distribution out of the box) and native **.deb** packages optimized for Ubuntu and Debian-based systems.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="glass-panel rounded-2xl border border-slate-800 overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between text-white font-semibold hover:text-indigo-400 transition-colors focus:outline-none">
+                        <span>How do I receive automatic software updates?</span>
+                        <i class="fa-solid fa-chevron-down text-sm text-slate-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-slate-400 text-sm leading-relaxed border-t border-slate-800/60 pt-4">
+                        OmniSignal includes an in-app background update checker. Whenever a new stable version is published, a discreet notification will appear in your client dashboard allowing you to update in one click.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="glass-panel rounded-2xl border border-slate-800 overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between text-white font-semibold hover:text-indigo-400 transition-colors focus:outline-none">
+                        <span>Is my data secure when routing through Terminal-Aistudio?</span>
+                        <i class="fa-solid fa-chevron-down text-sm text-slate-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-slate-400 text-sm leading-relaxed border-t border-slate-800/60 pt-4">
+                        Absolutely. All signal transmissions utilize modern TLS 1.3 encryption protocols and zero-knowledge node routing, ensuring your traffic remains completely private and tamper-proof.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-900 bg-slate-950 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-slate-500 text-sm">
+            <div class="flex items-center gap-3">
+                <div class="w-7 h-7 rounded-lg bg-indigo-600 flex items-center justify-center text-white text-xs">
+                     <img src="static/images/bug.png">
+                </div>
+                <span class="font-bold text-slate-300">Plugai</span>
+                <span class="text-xs">© 2022 All rights reserved.</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="#" class="hover:text-indigo-400 transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-indigo-400 transition-colors">Terms of Service</a>
+                <a href="faqs.html" class="text-indigo-400 transition-colors">FAQ</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts for Mobile menu & FAQ Accordion -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        const toggles = document.querySelectorAll('.faq-toggle');
+        toggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('fa-chevron-down');
+                content.classList.toggle('hidden');
+                toggle.classList.toggle('text-indigo-400');
+            });
+        });
+    </script>
+</body>
+</html>
